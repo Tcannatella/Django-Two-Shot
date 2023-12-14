@@ -42,3 +42,4 @@ class Receipt(models.Model):
         on_delete=models.CASCADE,
          null=True,
     )
+    
