@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>default</title>
+</head>
+<body>
+    <main>
+        <h1>My Receipts</h1>
+            <table>
+                <thead>
+                    <tr>
+                      <th>Vendor</th>
+                      <th>Total</th>
+                      <th>Tax</th>
+                      <th>Date</th>
+                      <th>Category</th>
+                      <th>Account</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in receipts_list %}
+                        <tr>
+                          <td>{{i.vendor}}</td>
+                          <td>{{i.total}}</td>
+                          <td>{{i.tax}}</td>
+                          <td>{{i.date|date:"m d, y"}}</td>
+                          <td>{{i.category.name}}</td>
+                          <td>{{i.account.name}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </main>
+</body>
+</html>
