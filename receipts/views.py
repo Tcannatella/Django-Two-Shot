@@ -11,3 +11,4 @@ def receipts_list(request):
 
     return render(request, "receipts/list.html", context)
 
+
