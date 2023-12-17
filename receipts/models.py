@@ -25,7 +25,9 @@ class Receipt(models.Model):
     vendor = models.CharField(max_length=200)
     total = models.DecimalField(max_digits=10, decimal_places=3)
     tax = models.DecimalField(max_digits=10, decimal_places=3)
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(
+        blank=True,
+        null=True)
     purchaser = models.ForeignKey(
         User,
         related_name = "receipts",
@@ -42,4 +44,3 @@ class Receipt(models.Model):
         on_delete=models.CASCADE,
          null=True,
     )
-    
