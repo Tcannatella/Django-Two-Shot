@@ -56,9 +56,9 @@ def create_category(request):
     if request.method == "POST":
         form = ExpenseCategoryForm(request.POST)
         if form.is_valid():
-            category = form.save(commit=False)  
+            category = form.save(commit=False)
             category.owner = request.user
-            item = form.save()
+            category.save()
             return redirect("category_list")
     else:
         form = ExpenseCategoryForm()
