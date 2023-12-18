@@ -1,4 +1,6 @@
 from django import forms
+from receipts.models import Account
+from django.forms import ModelForm
 
 
 class LoginForm(forms.Form):
@@ -18,3 +20,4 @@ class SignUpForm(forms.Form):
         max_length=150,
         widget=forms.PasswordInput,
     )
+
